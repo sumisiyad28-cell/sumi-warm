@@ -13,6 +13,9 @@
 </head>
 <body>
 
+  <!-- Fixed 3D Canvas — sits behind everything -->
+  <canvas id="threeCanvas"></canvas>
+
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- NAVBAR -->
@@ -42,7 +45,6 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <canvas id="leafCanvas" aria-hidden="true"></canvas>
     <div class="chem-elements" aria-hidden="true">
       <span class="chem-el" style="--d:0s;  --x:8%;  --s:1.1">H</span>
       <span class="chem-el" style="--d:2s;  --x:18%; --s:0.8">C</span>
@@ -59,7 +61,7 @@
     </div>
     <div class="hero-content">
       <div class="hero-badge">
-        <i class="fas fa-seedling"></i>
+        <i class="fas fa-atom"></i>
         <span>CSIR-NET Qualified Researcher</span>
       </div>
       <h1 class="hero-name">Sumi Siyad</h1>
@@ -74,7 +76,7 @@
         <a href="#contact"  class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Research</span></div>
+        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years Research</span></div>
         <div class="stat-divider"></div>
         <div class="stat"><span class="stat-num">4</span><span class="stat-label">Research Projects</span></div>
         <div class="stat-divider"></div>
@@ -102,7 +104,7 @@
               <img src="profile.png" alt="Sumi Siyad" onerror="this.style.display='none';this.parentElement.querySelector('.avatar-fallback').style.display='flex'" />
               <span class="avatar-fallback">SS</span>
             </div>
-            <div class="avatar-badge"><i class="fas fa-leaf"></i></div>
+            <div class="avatar-badge"><i class="fas fa-atom"></i></div>
           </div>
           <div class="about-info-cards">
             <div class="info-card"><i class="fas fa-map-marker-alt"></i><span>Kottayam, Kerala, India</span></div>
@@ -113,7 +115,7 @@
         </div>
         <div class="about-content fade-in">
           <p class="about-text">
-            Postgraduate in Physical Chemistry with <strong>2+ years of hands-on research experience</strong> in
+            Postgraduate in Physical Chemistry with <strong>5+ years of hands-on research experience</strong> in
             electrochemistry, energy storage, and analytical chemistry. Currently a Postgraduate Research Fellow at
             <strong>CSIR-National Chemical Laboratory, Pune</strong>.
           </p>
@@ -150,7 +152,7 @@
     </div>
   </section>
 
-  <!-- RESEARCH EXPERIENCE -->
+  <!-- RESEARCH -->
   <section class="section section-alt" id="research">
     <div class="container">
       <div class="section-header fade-in">
@@ -159,7 +161,6 @@
         <p class="section-subtitle">A timeline of contributions across prestigious institutions</p>
       </div>
       <div class="timeline">
-
         <div class="timeline-item fade-in">
           <div class="timeline-dot"><i class="fas fa-water"></i></div>
           <div class="timeline-card">
@@ -179,15 +180,11 @@
               <li>Synthesising and testing electrocatalysts; analysing results via XRD, SEM</li>
             </ul>
             <div class="timeline-tags">
-              <span class="tag">Seawater Electrolysis</span>
-              <span class="tag">Green Hydrogen</span>
-              <span class="tag">Electrocatalysts</span>
-              <span class="tag">XRD</span>
-              <span class="tag">SEM</span>
+              <span class="tag">Seawater Electrolysis</span><span class="tag">Green Hydrogen</span>
+              <span class="tag">Electrocatalysts</span><span class="tag">XRD</span><span class="tag">SEM</span>
             </div>
           </div>
         </div>
-
         <div class="timeline-item fade-in">
           <div class="timeline-dot"><i class="fas fa-circle-nodes"></i></div>
           <div class="timeline-card">
@@ -203,17 +200,14 @@
             <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. Beena Mathew</p>
             <ul class="timeline-points">
               <li>Synthesised fluorescent carbon dots and evaluated their application as biosensors</li>
-              <li>Used fluorescence and UV-Vis spectroscopy to characterise optical properties and sensing response</li>
+              <li>Used fluorescence and UV-Vis spectroscopy to characterise optical properties</li>
             </ul>
             <div class="timeline-tags">
-              <span class="tag">Carbon Dots</span>
-              <span class="tag">Biosensors</span>
-              <span class="tag">Fluorescence Spectroscopy</span>
-              <span class="tag">UV-Vis</span>
+              <span class="tag">Carbon Dots</span><span class="tag">Biosensors</span>
+              <span class="tag">Fluorescence Spectroscopy</span><span class="tag">UV-Vis</span>
             </div>
           </div>
         </div>
-
         <div class="timeline-item fade-in">
           <div class="timeline-dot"><i class="fas fa-bolt"></i></div>
           <div class="timeline-card">
@@ -229,17 +223,14 @@
             <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. K. Selvaraj</p>
             <ul class="timeline-points">
               <li>Investigated Anion Exchange Membrane (AEM) electrolysers for hydrogen generation</li>
-              <li>Performed electrochemical testing and membrane characterisation; maintained detailed experimental records</li>
+              <li>Performed electrochemical testing and membrane characterisation</li>
             </ul>
             <div class="timeline-tags">
-              <span class="tag">AEM Electrolyser</span>
-              <span class="tag">Hydrogen Generation</span>
-              <span class="tag">Membrane Characterisation</span>
-              <span class="tag">Electrochemical Testing</span>
+              <span class="tag">AEM Electrolyser</span><span class="tag">Hydrogen Generation</span>
+              <span class="tag">Membrane Characterisation</span><span class="tag">Electrochemical Testing</span>
             </div>
           </div>
         </div>
-
         <div class="timeline-item fade-in">
           <div class="timeline-dot"><i class="fas fa-battery-full"></i></div>
           <div class="timeline-card">
@@ -255,17 +246,14 @@
             <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. Sreekumar Kurungot</p>
             <ul class="timeline-points">
               <li>Synthesised FeCo alloy-embedded melamine formaldehyde resin-derived spheroid carbon</li>
-              <li>Characterised materials using XRD, SEM, TEM; evaluated performance as cathode catalyst in Zn-air batteries</li>
+              <li>Characterised using XRD, SEM, TEM; evaluated as cathode catalyst in Zn-air batteries</li>
             </ul>
             <div class="timeline-tags">
-              <span class="tag">Zinc-Air Battery</span>
-              <span class="tag">FeCo Alloy</span>
-              <span class="tag">XRD · SEM · TEM</span>
-              <span class="tag">Cathode Catalyst</span>
+              <span class="tag">Zinc-Air Battery</span><span class="tag">FeCo Alloy</span>
+              <span class="tag">XRD · SEM · TEM</span><span class="tag">Cathode Catalyst</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -356,29 +344,19 @@
           </div>
         </div>
       </div>
-
       <div class="languages fade-in">
         <h3><i class="fas fa-language"></i> Languages</h3>
         <div class="lang-grid lang-rows">
           <div class="lang-item">
-            <div class="lang-info">
-              <span class="lang-name">Malayalam</span>
-              <span class="lang-level">Native</span>
-            </div>
+            <div class="lang-info"><span class="lang-name">Malayalam</span><span class="lang-level">Native</span></div>
             <div class="lang-bar"><div class="lang-fill" data-width="100%"></div></div>
           </div>
           <div class="lang-item">
-            <div class="lang-info">
-              <span class="lang-name">English</span>
-              <span class="lang-level">Full Professional</span>
-            </div>
+            <div class="lang-info"><span class="lang-name">English</span><span class="lang-level">Full Professional</span></div>
             <div class="lang-bar"><div class="lang-fill" data-width="90%"></div></div>
           </div>
           <div class="lang-item">
-            <div class="lang-info">
-              <span class="lang-name">Hindi</span>
-              <span class="lang-level">Professional Working</span>
-            </div>
+            <div class="lang-info"><span class="lang-name">Hindi</span><span class="lang-level">Professional Working</span></div>
             <div class="lang-bar"><div class="lang-fill" data-width="70%"></div></div>
           </div>
         </div>
@@ -394,7 +372,6 @@
         <h2 class="section-title">Key Projects</h2>
       </div>
       <div class="projects-grid">
-
         <div class="project-card featured fade-in">
           <span class="project-label">MSc Dissertation</span>
           <div class="project-icon"><i class="fas fa-battery-three-quarters"></i></div>
@@ -406,13 +383,10 @@
             <li>Evaluated electrochemical performance for primary Zn-air battery cathode application</li>
           </ul>
           <div class="project-tags">
-            <span class="tag">Zn-Air Battery</span>
-            <span class="tag">Electrocatalyst</span>
-            <span class="tag">Pyrolysis</span>
-            <span class="tag">DLS · SEM · UV-Vis</span>
+            <span class="tag">Zn-Air Battery</span><span class="tag">Electrocatalyst</span>
+            <span class="tag">Pyrolysis</span><span class="tag">DLS · SEM · UV-Vis</span>
           </div>
         </div>
-
         <div class="project-card fade-in">
           <span class="project-label">BSc Project</span>
           <div class="project-icon"><i class="fas fa-leaf"></i></div>
@@ -423,12 +397,9 @@
             <li>Developed calibration curves for accurate concentration measurement</li>
           </ul>
           <div class="project-tags">
-            <span class="tag">UV-Vis</span>
-            <span class="tag">Spectrophotometry</span>
-            <span class="tag">Analytical Chemistry</span>
+            <span class="tag">UV-Vis</span><span class="tag">Spectrophotometry</span><span class="tag">Analytical Chemistry</span>
           </div>
         </div>
-
         <div class="project-card fade-in">
           <span class="project-label">BSc Project</span>
           <div class="project-icon"><i class="fas fa-droplet"></i></div>
@@ -439,12 +410,9 @@
             <li>Assessment of multiple quality parameters for environmental monitoring</li>
           </ul>
           <div class="project-tags">
-            <span class="tag">Water Quality</span>
-            <span class="tag">Environmental Analysis</span>
-            <span class="tag">Physicochemical Testing</span>
+            <span class="tag">Water Quality</span><span class="tag">Environmental Analysis</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -461,7 +429,7 @@
           <div class="achievement-icon"><i class="fas fa-award"></i></div>
           <div class="achievement-content">
             <h3>CSIR-NET Qualified</h3>
-            <p>Cleared the prestigious national eligibility test qualifying for the PhD-NET Scholarship in Chemical Sciences — one of India's most competitive research fellowships.</p>
+            <p>Cleared the prestigious national eligibility test qualifying for the PhD-NET Scholarship in Chemical Sciences.</p>
             <span class="achievement-date">July 2024</span>
           </div>
         </div>
@@ -469,7 +437,7 @@
           <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
           <div class="achievement-content">
             <h3>Ranked 8th — MGU CAT 2020</h3>
-            <p>Achieved 8th position in the competitive Common Admission Test for MSc Chemistry at Mahatma Gandhi University, demonstrating exceptional academic performance.</p>
+            <p>Achieved 8th position in the competitive Common Admission Test for MSc Chemistry at Mahatma Gandhi University.</p>
             <span class="achievement-date">2020</span>
           </div>
         </div>
@@ -531,7 +499,7 @@
       <div class="section-header fade-in">
         <span class="section-tag light">Get in Touch</span>
         <h2 class="section-title light">Contact</h2>
-        <p class="section-subtitle light">Interested in collaborating or have research opportunities? I'd love to hear from you.</p>
+        <p class="section-subtitle light">Interested in collaborating or have research opportunities?</p>
       </div>
       <div class="contact-grid">
         <a href="mailto:sumi.siyad.28@gmail.com" class="contact-card fade-in">
@@ -572,6 +540,15 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- 3D Scene label HUD -->
+  <div class="scene-hud" id="sceneHud">
+    <span class="scene-hud-icon">⚛</span>
+    <span class="scene-hud-text">Zinc Atom Model</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
