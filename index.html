@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sumi Siyad — Postgraduate Research Fellow in Physical Chemistry specializing in electrochemistry, green hydrogen, and energy storage." />
+  <title>Sumi Siyad | Physical Chemistry Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <div class="logo-img">
+          <img src="profile.png" alt="Sumi Siyad" onerror="this.parentElement.innerHTML='<span class=logo-text>SS</span>'" />
+        </div>
+        <span class="logo-name">Sumi Siyad</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"        class="nav-link">About</a></li>
+        <li><a href="#research"     class="nav-link">Research</a></li>
+        <li><a href="#education"    class="nav-link">Education</a></li>
+        <li><a href="#skills"       class="nav-link">Skills</a></li>
+        <li><a href="#projects"     class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact"      class="nav-link contact-btn">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas id="leafCanvas" aria-hidden="true"></canvas>
+    <div class="chem-elements" aria-hidden="true">
+      <span class="chem-el" style="--d:0s;  --x:8%;  --s:1.1">H</span>
+      <span class="chem-el" style="--d:2s;  --x:18%; --s:0.8">C</span>
+      <span class="chem-el" style="--d:4s;  --x:28%; --s:1.3">Fe</span>
+      <span class="chem-el" style="--d:1s;  --x:38%; --s:0.9">Zn</span>
+      <span class="chem-el" style="--d:3s;  --x:52%; --s:1.0">N</span>
+      <span class="chem-el" style="--d:5s;  --x:63%; --s:1.2">O</span>
+      <span class="chem-el" style="--d:1.5s;--x:73%; --s:0.85">Na</span>
+      <span class="chem-el" style="--d:3.5s;--x:83%; --s:1.1">Co</span>
+      <span class="chem-el" style="--d:0.5s;--x:92%; --s:0.9">Cl</span>
+      <span class="chem-el" style="--d:2.5s;--x:45%; --s:0.75">Pt</span>
+      <span class="chem-el" style="--d:4.5s;--x:56%; --s:1.0">Ni</span>
+      <span class="chem-el" style="--d:6s;  --x:12%; --s:0.8">S</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-seedling"></i>
+        <span>CSIR-NET Qualified Researcher</span>
+      </div>
+      <h1 class="hero-name">Sumi Siyad</h1>
+      <p class="hero-title">Postgraduate Research Fellow</p>
+      <p class="hero-subtitle">Physical Chemistry &nbsp;·&nbsp; Electrochemistry &nbsp;·&nbsp; Green Energy</p>
+      <p class="hero-desc">
+        Advancing the frontiers of electrochemical science through research in Zn–air batteries,
+        AEM electrolysers, and seawater electrolysis for sustainable hydrogen production.
+      </p>
+      <div class="hero-actions">
+        <a href="#research" class="btn btn-primary"><i class="fas fa-microscope"></i> View Research</a>
+        <a href="#contact"  class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Research</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Research Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">8th</span><span class="stat-label">MGU CAT Rank</span></div>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll" aria-label="Scroll down">
+      <span>Scroll</span>
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Profile Summary</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual fade-in">
+          <div class="avatar-container">
+            <div class="avatar-ring"></div>
+            <div class="avatar">
+              <img src="profile.png" alt="Sumi Siyad" onerror="this.style.display='none';this.parentElement.querySelector('.avatar-fallback').style.display='flex'" />
+              <span class="avatar-fallback">SS</span>
+            </div>
+            <div class="avatar-badge"><i class="fas fa-leaf"></i></div>
+          </div>
+          <div class="about-info-cards">
+            <div class="info-card"><i class="fas fa-map-marker-alt"></i><span>Kottayam, Kerala, India</span></div>
+            <div class="info-card"><i class="fas fa-envelope"></i><a href="mailto:sumi.siyad.28@gmail.com">sumi.siyad.28@gmail.com</a></div>
+            <div class="info-card"><i class="fas fa-phone"></i><a href="tel:+919778701038">+91 9778701038</a></div>
+            <div class="info-card"><i class="fas fa-calendar"></i><span>DOB: 28 October 1997</span></div>
+          </div>
+        </div>
+        <div class="about-content fade-in">
+          <p class="about-text">
+            Postgraduate in Physical Chemistry with <strong>2+ years of hands-on research experience</strong> in
+            electrochemistry, energy storage, and analytical chemistry. Currently a Postgraduate Research Fellow at
+            <strong>CSIR-National Chemical Laboratory, Pune</strong>.
+          </p>
+          <p class="about-text">
+            Skilled in Zn–air batteries, AEM electrolysers, carbon-dot biosensors, and seawater electrolysis.
+            <strong>CSIR-NET PhD qualified</strong> (July 2024) and <strong>ranked 8th in MGU CAT 2020</strong>.
+            Passionate about cutting-edge research in materials and chemical science.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight">
+              <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+              <div>
+                <h4>CSIR-NET Qualified</h4>
+                <p>PhD-NET Scholarship in Chemical Sciences · July 2024</p>
+              </div>
+            </div>
+            <div class="highlight">
+              <div class="highlight-icon"><i class="fas fa-flask"></i></div>
+              <div>
+                <h4>CSIR-NCL Research Fellow</h4>
+                <p>National Chemical Laboratory, Pune</p>
+              </div>
+            </div>
+            <div class="highlight">
+              <div class="highlight-icon"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h4>Green Energy Focus</h4>
+                <p>Seawater electrolysis &amp; green hydrogen production</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section class="section section-alt" id="research">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Experience</span>
+        <h2 class="section-title">Research Experience</h2>
+        <p class="section-subtitle">A timeline of contributions across prestigious institutions</p>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"><i class="fas fa-water"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Project Research Fellow</h3>
+                <p class="timeline-org">CSIR – National Chemical Laboratory (NCL), Pune</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> June 2025 – March 2026</span>
+              </div>
+            </div>
+            <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. Poulomi Roy</p>
+            <ul class="timeline-points">
+              <li>Working on seawater electrolysis for green hydrogen production</li>
+              <li>Conducting electrochemical characterisation using Biologic workstation and RDE</li>
+              <li>Synthesising and testing electrocatalysts; analysing results via XRD, SEM</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Seawater Electrolysis</span>
+              <span class="tag">Green Hydrogen</span>
+              <span class="tag">Electrocatalysts</span>
+              <span class="tag">XRD</span>
+              <span class="tag">SEM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"><i class="fas fa-circle-nodes"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Project Researcher – Carbon Dot Biosensor</h3>
+                <p class="timeline-org">Mahatma Gandhi University, Kottayam</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Nov 2024 – Apr 2025</span>
+              </div>
+            </div>
+            <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. Beena Mathew</p>
+            <ul class="timeline-points">
+              <li>Synthesised fluorescent carbon dots and evaluated their application as biosensors</li>
+              <li>Used fluorescence and UV-Vis spectroscopy to characterise optical properties and sensing response</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Carbon Dots</span>
+              <span class="tag">Biosensors</span>
+              <span class="tag">Fluorescence Spectroscopy</span>
+              <span class="tag">UV-Vis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"><i class="fas fa-bolt"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Project Researcher – Electrolyser &amp; AEM</h3>
+                <p class="timeline-org">CSIR-NCL, Pune</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Aug 2023 – Feb 2024</span>
+              </div>
+            </div>
+            <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. K. Selvaraj</p>
+            <ul class="timeline-points">
+              <li>Investigated Anion Exchange Membrane (AEM) electrolysers for hydrogen generation</li>
+              <li>Performed electrochemical testing and membrane characterisation; maintained detailed experimental records</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">AEM Electrolyser</span>
+              <span class="tag">Hydrogen Generation</span>
+              <span class="tag">Membrane Characterisation</span>
+              <span class="tag">Electrochemical Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"><i class="fas fa-battery-full"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Project Researcher – Zinc-Air Battery</h3>
+                <p class="timeline-org">CSIR-NCL, Pune</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> May 2022 – Oct 2022</span>
+              </div>
+            </div>
+            <p class="timeline-supervisor"><i class="fas fa-user-tie"></i> Under Dr. Sreekumar Kurungot</p>
+            <ul class="timeline-points">
+              <li>Synthesised FeCo alloy-embedded melamine formaldehyde resin-derived spheroid carbon</li>
+              <li>Characterised materials using XRD, SEM, TEM; evaluated performance as cathode catalyst in Zn-air batteries</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Zinc-Air Battery</span>
+              <span class="tag">FeCo Alloy</span>
+              <span class="tag">XRD · SEM · TEM</span>
+              <span class="tag">Cathode Catalyst</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Academic Background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="education-grid">
+        <div class="edu-card fade-in">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="edu-score">82.5%</span>
+          <h3>MSc Chemistry</h3>
+          <p class="edu-spec">Physical Chemistry</p>
+          <p class="edu-institution">School of Chemical Sciences, Mahatma Gandhi University, Kottayam, Kerala</p>
+          <span class="edu-date">Dec 2020 – Nov 2022</span>
+        </div>
+        <div class="edu-card fade-in">
+          <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <span class="edu-score">78.8%</span>
+          <h3>BSc Chemistry</h3>
+          <p class="edu-spec">Chemistry</p>
+          <p class="edu-institution">CMS College (Affiliated to MG University), Kottayam</p>
+          <span class="edu-date">Jun 2017 – Apr 2020</span>
+        </div>
+        <div class="edu-card fade-in">
+          <div class="edu-icon"><i class="fas fa-school"></i></div>
+          <span class="edu-score">92%</span>
+          <h3>Higher Secondary (CBSE)</h3>
+          <p class="edu-spec">Class XII</p>
+          <p class="edu-institution">Belmont English Medium School, Kottayam</p>
+          <span class="edu-date">Jun 2013 – Jun 2015</span>
+        </div>
+        <div class="edu-card fade-in">
+          <div class="edu-icon"><i class="fas fa-book-open"></i></div>
+          <span class="edu-score">94%</span>
+          <h3>SSLC (CBSE)</h3>
+          <p class="edu-spec">Class X</p>
+          <p class="edu-institution">Belmont English Medium School, Kottayam</p>
+          <span class="edu-date">Jun 2012 – Jun 2013</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category fade-in">
+          <div class="skill-cat-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Electrochemical Techniques</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Biologic Electrochemical Workstation</span>
+            <span class="skill-tag">Rotating Disk Electrode (RDE)</span>
+            <span class="skill-tag">Linear Sweep Voltammetry (LSV)</span>
+            <span class="skill-tag">Cyclic Voltammetry (CV)</span>
+          </div>
+        </div>
+        <div class="skill-category fade-in">
+          <div class="skill-cat-icon"><i class="fas fa-wave-square"></i></div>
+          <h3>Spectroscopic &amp; Analytical</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">UV-Vis Spectroscopy</span>
+            <span class="skill-tag">Fluorescence Spectroscopy</span>
+            <span class="skill-tag">IR / FTIR Spectroscopy</span>
+            <span class="skill-tag">Dynamic Light Scattering (DLS)</span>
+            <span class="skill-tag">XRD Analysis</span>
+            <span class="skill-tag">SEM / TEM</span>
+          </div>
+        </div>
+        <div class="skill-category fade-in">
+          <div class="skill-cat-icon"><i class="fas fa-flask"></i></div>
+          <h3>Research &amp; Laboratory</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Material Synthesis &amp; Characterisation</span>
+            <span class="skill-tag">Data Recording &amp; Analysis</span>
+            <span class="skill-tag">Literature Review</span>
+            <span class="skill-tag">Scientific Documentation</span>
+            <span class="skill-tag">Experimental Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="languages fade-in">
+        <h3><i class="fas fa-language"></i> Languages</h3>
+        <div class="lang-grid lang-rows">
+          <div class="lang-item">
+            <div class="lang-info">
+              <span class="lang-name">Malayalam</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" data-width="100%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-info">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Full Professional</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" data-width="90%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-info">
+              <span class="lang-name">Hindi</span>
+              <span class="lang-level">Professional Working</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" data-width="70%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Research Work</span>
+        <h2 class="section-title">Key Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card featured fade-in">
+          <span class="project-label">MSc Dissertation</span>
+          <div class="project-icon"><i class="fas fa-battery-three-quarters"></i></div>
+          <h3>FeCo Alloy Embedded Melamine Formaldehyde Resin Derived Spheroid Carbon</h3>
+          <p class="project-subtitle">For Primary Zn-Air Battery Applications</p>
+          <ul class="project-points">
+            <li>Designed and synthesised novel spheroid carbon electrocatalysts via pyrolysis of FeCo-doped polymer resin</li>
+            <li>Characterised morphology and optical properties using DLS, SEM, UV-Vis, and IR spectroscopy</li>
+            <li>Evaluated electrochemical performance for primary Zn-air battery cathode application</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Zn-Air Battery</span>
+            <span class="tag">Electrocatalyst</span>
+            <span class="tag">Pyrolysis</span>
+            <span class="tag">DLS · SEM · UV-Vis</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <span class="project-label">BSc Project</span>
+          <div class="project-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Analysis of Curcumin Content in Turmeric</h3>
+          <p class="project-subtitle">UV-Vis Spectrophotometric Quantification</p>
+          <ul class="project-points">
+            <li>Quantitative determination of curcumin using UV-Vis spectrophotometry</li>
+            <li>Developed calibration curves for accurate concentration measurement</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">UV-Vis</span>
+            <span class="tag">Spectrophotometry</span>
+            <span class="tag">Analytical Chemistry</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <span class="project-label">BSc Project</span>
+          <div class="project-icon"><i class="fas fa-droplet"></i></div>
+          <h3>Analysis of Water Quality Parameters</h3>
+          <p class="project-subtitle">Physicochemical Testing of Water Samples</p>
+          <ul class="project-points">
+            <li>Comprehensive physicochemical testing of water samples</li>
+            <li>Assessment of multiple quality parameters for environmental monitoring</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Water Quality</span>
+            <span class="tag">Environmental Analysis</span>
+            <span class="tag">Physicochemical Testing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section section-alt" id="achievements">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Milestones</span>
+        <h2 class="section-title">Achievements</h2>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card fade-in">
+          <div class="achievement-icon"><i class="fas fa-award"></i></div>
+          <div class="achievement-content">
+            <h3>CSIR-NET Qualified</h3>
+            <p>Cleared the prestigious national eligibility test qualifying for the PhD-NET Scholarship in Chemical Sciences — one of India's most competitive research fellowships.</p>
+            <span class="achievement-date">July 2024</span>
+          </div>
+        </div>
+        <div class="achievement-card fade-in">
+          <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+          <div class="achievement-content">
+            <h3>Ranked 8th — MGU CAT 2020</h3>
+            <p>Achieved 8th position in the competitive Common Admission Test for MSc Chemistry at Mahatma Gandhi University, demonstrating exceptional academic performance.</p>
+            <span class="achievement-date">2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section" id="references">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Academic &amp; Professional</span>
+        <h2 class="section-title">References</h2>
+      </div>
+      <div class="references-grid">
+        <div class="reference-card fade-in">
+          <div class="ref-avatar">SK</div>
+          <div class="ref-content">
+            <h3>Dr. Sreekumar Kurungot</h3>
+            <p class="ref-title">Scientist, Physical &amp; Materials Chemistry Division</p>
+            <p class="ref-org">National Chemical Laboratory (NCL), Pune</p>
+            <div class="ref-contact">
+              <span><i class="fas fa-phone"></i> +91-20-25902566</span>
+              <span><i class="fas fa-envelope"></i> k.sreekumar@ncl.res.in</span>
+            </div>
+          </div>
+        </div>
+        <div class="reference-card fade-in">
+          <div class="ref-avatar">ST</div>
+          <div class="ref-content">
+            <h3>Dr. Sabu Thomas</h3>
+            <p class="ref-title">Retd. Vice Chancellor &amp; Professor of Polymer Science</p>
+            <p class="ref-org">Mahatma Gandhi University, Kottayam</p>
+            <div class="ref-contact">
+              <span><i class="fas fa-phone"></i> +91 9447223452</span>
+              <span><i class="fas fa-envelope"></i> sabuthomas@mgu.ac.in</span>
+            </div>
+          </div>
+        </div>
+        <div class="reference-card fade-in">
+          <div class="ref-avatar">BM</div>
+          <div class="ref-content">
+            <h3>Dr. Beena Mathew</h3>
+            <p class="ref-title">Associate Professor, Physical Chemistry</p>
+            <p class="ref-org">School of Chemical Sciences, MGU, Kottayam</p>
+            <div class="ref-contact">
+              <span><i class="fas fa-phone"></i> +91 9447145412</span>
+              <span><i class="fas fa-envelope"></i> beenamathew@mgu.ac.in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag light">Get in Touch</span>
+        <h2 class="section-title light">Contact</h2>
+        <p class="section-subtitle light">Interested in collaborating or have research opportunities? I'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:sumi.siyad.28@gmail.com" class="contact-card fade-in">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h4>Email</h4>
+          <span>sumi.siyad.28@gmail.com</span>
+        </a>
+        <a href="tel:+919778701038" class="contact-card fade-in">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <h4>Phone</h4>
+          <span>+91 9778701038</span>
+        </a>
+        <a href="https://www.linkedin.com/in/sumi-siyad-3b61243a7/" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <h4>LinkedIn</h4>
+          <span>sumi-siyad</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-img">
+            <img src="profile.png" alt="Sumi Siyad" onerror="this.parentElement.outerHTML='<span class=footer-logo>SS</span>'" />
+          </div>
+          <p>Sumi Siyad &nbsp;·&nbsp; Physical Chemistry Researcher</p>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sumi Siyad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
