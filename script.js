@@ -88,7 +88,7 @@ if (langGrid) langObs.observe(langGrid);
 
   /* ---- Core setup ---- */
   const scene    = new THREE.Scene();
-  scene.fog      = new THREE.FogExp2(0xfdf6f0, 0.016);
+  scene.fog      = new THREE.FogExp2(0x0d0500, 0.018);
 
   const camera   = new THREE.PerspectiveCamera(60, W() / H(), 0.1, 200);
   camera.position.set(0, 0, 12);
@@ -96,7 +96,7 @@ if (langGrid) langObs.observe(langGrid);
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.setSize(W(), H());
-  renderer.setClearColor(0xfdf6f0);
+  renderer.setClearColor(0x0d0500);
 
   const camTarget = new THREE.Vector3(0, 0, 0);
 
@@ -107,33 +107,33 @@ if (langGrid) langObs.observe(langGrid);
   });
 
   /* ---- Lighting ---- */
-  scene.add(new THREE.AmbientLight(0xffeedd, 0.7));
+  scene.add(new THREE.AmbientLight(0x442200, 0.4));
 
-  const nucleusLight = new THREE.PointLight(0xc47c2b, 5, 15);
+  const nucleusLight = new THREE.PointLight(0xe8952e, 8, 18);
   nucleusLight.position.set(0, 0, 0);
   scene.add(nucleusLight);
 
-  const fillA = new THREE.PointLight(0xd4652a, 2.5, 30);
+  const fillA = new THREE.PointLight(0xe06830, 4, 35);
   fillA.position.set(10, 5, 4);
   scene.add(fillA);
 
-  const fillB = new THREE.PointLight(0xe8a44a, 2, 25);
+  const fillB = new THREE.PointLight(0xfdb155, 3, 30);
   fillB.position.set(-10, -5, 3);
   scene.add(fillB);
 
-  const h2Light  = new THREE.PointLight(0x44aaff, 3, 18);
+  const h2Light  = new THREE.PointLight(0x44aaff, 5, 22);
   h2Light.position.set(15, 3, -10);
   scene.add(h2Light);
 
-  const h2oLight = new THREE.PointLight(0xff3366, 3, 18);
+  const h2oLight = new THREE.PointLight(0xff2244, 5, 22);
   h2oLight.position.set(-15, -2, -8);
   scene.add(h2oLight);
 
-  const cellLight = new THREE.PointLight(0x44ccff, 2, 20);
+  const cellLight = new THREE.PointLight(0x44ccff, 4, 25);
   cellLight.position.set(0, -14, -5);
   scene.add(cellLight);
 
-  const battLight = new THREE.PointLight(0xffcc00, 2.5, 18);
+  const battLight = new THREE.PointLight(0xffcc00, 4, 22);
   battLight.position.set(12, -22, -4);
   scene.add(battLight);
 
@@ -171,7 +171,7 @@ if (langGrid) langObs.observe(langGrid);
   scene.add(atomGroup);
 
   // Nucleus cluster
-  const nucColors = [0xc47c2b, 0xd4652a, 0xe8a44a, 0xb5532a, 0x9c6020];
+  const nucColors = [0xe8952e, 0xe06830, 0xfdb155, 0xd4652a, 0xc47c2b];
   for (let i = 0; i < 16; i++) {
     const s = mkSphere(0.17 + Math.random() * 0.1, nucColors[i % 5], 0x6b2000);
     s.position.set(
@@ -415,12 +415,12 @@ if (langGrid) langObs.observe(langGrid);
   /* =====================================================
      6. BACKGROUND PARTICLE CLOUD
      ===================================================== */
-  const pCount = 1200;
+  const pCount = 1500;
   const pPos   = new Float32Array(pCount * 3);
   for (let i = 0; i < pCount; i++) {
     const phi   = Math.acos(2 * Math.random() - 1);
     const theta = Math.random() * Math.PI * 2;
-    const r     = 7 + Math.random() * 28;
+    const r     = 6 + Math.random() * 30;
     pPos[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
     pPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
     pPos[i * 3 + 2] = r * Math.cos(phi);
@@ -428,7 +428,7 @@ if (langGrid) langObs.observe(langGrid);
   const pGeo = new THREE.BufferGeometry();
   pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
   const particles = new THREE.Points(pGeo,
-    new THREE.PointsMaterial({ color: 0xc47c2b, size: 0.07, transparent: true, opacity: 0.4 }));
+    new THREE.PointsMaterial({ color: 0xe8952e, size: 0.09, transparent: true, opacity: 0.55 }));
   scene.add(particles);
 
   /* =====================================================
@@ -456,14 +456,22 @@ if (langGrid) langObs.observe(langGrid);
     gsap.registerPlugin(ScrollTrigger);
 
     const journey = [
-      { id: '#about',        pos: [0,  1,  7],    look: [0,  0, 0],       icon: '⚛',  label: 'Zinc Atom Model' },
-      { id: '#research',     pos: [-10, -1, 5],   look: [-12, -2, -8],    icon: '⚗',  label: 'H₂O Electrolysis Cell' },
-      { id: '#education',    pos: [0,  5, 11],    look: [0,  0, 0],       icon: '🔬', label: 'Particle Field' },
-      { id: '#skills',       pos: [12,  2, 5],    look: [15,  3, -10],    icon: '💧', label: 'Green H₂ Molecule' },
-      { id: '#projects',     pos: [2, -14, 5],    look: [0, -14, -6],     icon: '⚡', label: 'Seawater Electrolyzer' },
-      { id: '#achievements', pos: [10, -21, 4],   look: [12, -23, -5],    icon: '🔋', label: 'Zn-Air Battery' },
-      { id: '#references',   pos: [-8,  4, 10],   look: [0,  0, 0],       icon: '⚛',  label: 'Zinc Atom Model' },
-      { id: '#contact',      pos: [0,  0, 12],    look: [0,  0, 0],       icon: '⚛',  label: 'Zinc Atom Model' },
+      // About — very close to atom, nucleus + rings fill screen
+      { id: '#about',        pos: [0,   0.5, 4],    look: [0,   0,   0],   icon: '⚛',  label: 'Zn Atom — Nucleus & Electron Shells' },
+      // Research — dive toward H2O and electrolysis cell in one dramatic pan
+      { id: '#research',     pos: [-8,  -0.5, 2],   look: [-13, -1,  -8],  icon: '⚗',  label: 'H₂O Electrolysis Cell' },
+      // Education — pull back and rise, particles surround camera like being inside an atom
+      { id: '#education',    pos: [0,   3.5,  8.5], look: [0,   0,   0],   icon: '✶', label: 'Atomic Particle Field' },
+      // Skills — shoot right to H2 molecule, it fills half the screen
+      { id: '#skills',       pos: [11,  2,   2.5],  look: [15,  3,  -10],  icon: '💧', label: 'H₂ Molecule — Green Hydrogen' },
+      // Projects — dive down to electrolysis cell from close range
+      { id: '#projects',     pos: [1,  -10,   2],   look: [0,  -14,  -6],  icon: '⚡', label: 'Electrochemical Cell — Live Electrolysis' },
+      // Achievements — zoom to battery from close side angle
+      { id: '#achievements', pos: [8,  -19,   2],   look: [12, -23,  -4],  icon: '🔋', label: 'Zn-Air Battery — Energy Storage' },
+      // References — swing back to a nice diagonal atom view
+      { id: '#references',   pos: [-4,   3,   7.5], look: [0,   0,   0],   icon: '⚛',  label: 'Zn Atom Model' },
+      // Contact — return to hero position
+      { id: '#contact',      pos: [0,    0,   9.5], look: [0,   0,   0],   icon: '⚛',  label: 'Zn Atom Model' },
     ];
 
     journey.forEach((step, idx) => {
@@ -501,7 +509,7 @@ if (langGrid) langObs.observe(langGrid);
     aura1.scale.setScalar(pulse);
     aura2.scale.setScalar(1 + Math.sin(t * 2.0 + 1) * 0.09);
     aura3.scale.setScalar(1 + Math.sin(t * 1.4 + 2) * 0.12);
-    nucleusLight.intensity = 4 + Math.sin(t * 3.2) * 1;
+    nucleusLight.intensity = 7 + Math.sin(t * 3.2) * 2;
 
     /* Atom slow auto-rotate */
     atomGroup.rotation.y = t * 0.1;
